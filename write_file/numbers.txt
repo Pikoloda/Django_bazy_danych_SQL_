@@ -1,0 +1,10 @@
+0				funkcja print jest super
+1				funkcja print jest super
+2				funkcja print jest super
+3				funkcja print jest super
+4				funkcja print jest super
+5				funkcja print jest super
+6				funkcja print jest super
+7				funkcja print jest super
+8				funkcja print jest super
+9				funkcja print jest super
