@@ -121,7 +121,7 @@ where oh.salesorderid is NULL;
 --      -> czyli wszystkich klientów którzy nie mają zamówienia
 
 
---
+-- TODO SUBQUERIES
 
 -- maksymalna cena jednostkowa w Sales.SalesOrderDetail (najwyższa cena, za jaką sprzedano pojedynczy produkt).
 -- MAX - jest to funkcja agregująca -> będziemy o tym mówić za chwilę
