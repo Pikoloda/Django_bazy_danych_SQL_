@@ -19,7 +19,7 @@ CREATE DATABASE NewDatabase
 
 -- Tworzenie i modyfikowanie tabeli
 ---------------------------------------
-USE chudzick
+USE pikoloda
 select DB_NAME();
 
 -- Tabela domyślnie nam się utworzy w schemacie domyslnym - dbo
@@ -63,7 +63,8 @@ CREATE TABLE Orders (
   OrderDate datetime,
   CustomerID int
 )
- 
+
+select * from Customers;
  
 -- wstawianie danych do tabeli Customer
 INSERT INTO Customers (ID, Firstname, Lastname, BirthDate)
@@ -71,7 +72,9 @@ VALUES (1, 'John', 'Smith', '19800105')
  
 INSERT INTO Customers (ID, Firstname, Lastname, BirthDate)
 VALUES (2, 'Kurt', 'Wallander', '19480105')
- 
+
+
+
 -- cannot insert duplicate PRIMARY KEY
 INSERT INTO Customers (ID, Firstname, Lastname, BirthDate)
 VALUES (2, 'James', 'Bond', '19680413')
@@ -82,7 +85,9 @@ VALUES (3, 'James', 'Bond', '19680413')
 SELECT * FROM Customers
  
 -- usunięcie wszystkich wierszy z tabeli Customer
+
 DELETE FROM Customers
+
 
 -- czyszcenie tabeli
 TRUNCATE TABLE Customers
@@ -113,7 +118,9 @@ CREATE TABLE Test (
  
 INSERT INTO Test (ID, Col2_NULL, Col3_NOTNULL)
 VALUES (1, 22, 33) -- all 3 columns
- 
+
+select * from  Test
+
 INSERT INTO Test (ID, Col2_NULL, Col3_NOTNULL)
 VALUES (2, NULL, 33) -- explicit defined null value for 2nd col
  
@@ -236,7 +243,9 @@ INSERT INTO Customers (Firstname, Lastname, BirthDate)
 VALUES ('James', 'Bond', '19680413')
 
 SELECT * FROM Customers
- 
+
+drop table Customers
+
  
  
  
@@ -378,8 +387,9 @@ ALTER TABLE Orders WITH CHECK CHECK CONSTRAINT FK_Orders_Customers_ID
  
  
 -- Opcja CASCADE
- 
- 
+
+select *
+from Orders;
 -- wstawienie testowych danych
 INSERT INTO Orders (OrderDate, CustomerID)
 VALUES (GETDATE(), 1)
@@ -393,7 +403,7 @@ INSERT INTO Orders (OrderDate, CustomerID)
 VALUES (GETDATE(), 3)
 INSERT INTO Orders (OrderDate, CustomerID)
 VALUES (GETDATE(), 3)
- 
+
 SELECT * FROM Orders
 SELECT * FROM Customers
  
@@ -538,7 +548,8 @@ INSERT INTO Orders (CustomerID) VALUES (1)
 INSERT INTO Orders (CustomerID) VALUES (1)
 INSERT INTO Orders (CustomerID) VALUES (2)
 INSERT INTO Orders (CustomerID) VALUES (3)
- 
+select *from Orders
+
 DELETE FROM Orders
  
 -- jak dodać więcej niż jedną wartość w jednym zapytaniu
@@ -577,7 +588,7 @@ SELECT * FROM Customers
 -- pomaga klauzula CHECK...
  
 -- niepowodzenie
-ALTER TABLE Customers -- WITH NOCHECK
+ALTER TABLE Customers WITH NOCHECK
 ADD CONSTRAINT CK_BirthDate CHECK (BirthDate < GETDATE())
  
 -- usuwamy niepoprawne dane

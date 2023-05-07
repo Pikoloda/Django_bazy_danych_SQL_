@@ -3,6 +3,9 @@
 -- Ważną informacją jest to że funkcję występujące w SQLServer nie muszą występować w innych RMDBS!!!!! -> T-SQL to rozwinięcie standardowego języka SQL
 
 -- wyciągnięcie roku z daty
+
+Use AdventureWorks2014
+
 SELECT YEAR(SellStartDate) AS SellStartYear, ProductID, Name
 FROM Production.Product
 ORDER BY SellStartYear;
@@ -108,3 +111,5 @@ WHERE s.name like '%Bike%'
 GROUP BY sp.businessentityid
 HAVING count(c.customerid) > 100
 ORDER BY Customers DESC;
+select *
+from Sales.Store;
