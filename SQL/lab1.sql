@@ -61,6 +61,11 @@ SELECT CustomerID FROM Sales.Customer
 WHERE TerritoryID = 8
 ORDER BY PersonID
 
+SELECT CustomerID FROM Sales.Customer
+WHERE TerritoryID = (SELECT TerritoryID FROM Sales.SalesTerritory
+                    WHERE Name= 'germany')
+ORDER BY PersonID
+
 SELECT * FROM SALES.Customer
 SELECT * FROM Sales.SalesTerritory
 
