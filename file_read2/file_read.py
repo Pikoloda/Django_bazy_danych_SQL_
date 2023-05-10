@@ -4,7 +4,6 @@ countries = {}
 with open(filename, encoding='utf-8') as contry_file:
     for row in contry_file:
         data = row.strip().split('|')
-        # print(data[0],data[2])
         country, capital, cc, cc3, iac, timezone, currency = data
         #Teraz chcemy zasilić naszą mapę countries
 
@@ -31,22 +30,13 @@ while True:
     else:
         print(f"Nie ma takiego kluczajak {selected_country}")
 
-# for key in countries:
-#     print(f"KEY : {key}, VALUE: {countries[key]}")
-
-        # print(country)
-        # print(cc)
-
-
-        # print(dict)
 
 
 
 # Po wpisaniu w konsoli nazwy kraju lub kodu 2 znakowego
 # Na konsoli print -> Stolica, strefa czasowa, walutowa, stolica
 
-# country = input("Podaj nazwe kraju: ")
-# skrót = input("Podaj skrót kraju: ")
+
 #
 
 
