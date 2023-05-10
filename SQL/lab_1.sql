@@ -109,7 +109,7 @@ WHERE ProductSubcategoryID IN (
 
 /*b*/
 
-SELECT pp.Name, pps.Name AS CategoryName, ppc.Name AS SubcategoryName  FROM Production.Product AS pp
+SELECT pp.Name, pps.Name AS SubcategoryName, ppc.Name AS CategoryName   FROM Production.Product AS pp
 JOIN Production.ProductSubcategory AS pps
 ON pps.ProductSubcategoryID = pp.ProductSubcategoryID
 JOIN Production.ProductCategory AS ppc
@@ -173,7 +173,7 @@ ORDER BY ShipDate;
 
 /*b*/
 
-SELECT * FROM Sales.SalesOrderHeader AS ssh
+SELECT ssh.SalesOrderID, ps.Name, ssh.ShipDate FROM Sales.SalesOrderHeader AS ssh
 JOIN Purchasing.ShipMethod AS ps
 ON ps.ShipMethodID = ssh.ShipMethodID
 WHERE ps.Name = 'OVERSEAS - DELUXE' OR ps.Name = 'CARGO TRANSPORT 5'
